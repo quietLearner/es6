@@ -13,7 +13,7 @@ const generateJoke = () => {
 
   axios.get("https://icanhazdadjoke.com", config).then((resp) => {
     document.getElementById("joke").innerHTML = resp.data.joke;
-    console.log(resp);
+    //console.log(resp);
   });
 
   //return "I don't trust stairs. They're alwasy up to something.";
