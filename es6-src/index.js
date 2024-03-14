@@ -5,6 +5,8 @@ import laughing from "./assets/laughing.svg";
 
 import higherOrder from "./higher-order/higherOrder";
 
+import localStorage from "./local-storage/localStorage";
+
 const laughImg = document.getElementById("laughImg");
 
 laughImg.src = laughing;
@@ -16,4 +18,7 @@ button.addEventListener("click", generateJoke);
 generateJoke(); // page load the first time, show a joke
 
 //higher order demo
-higherOrder();
+//higherOrder();
+
+//logcal storrage
+localStorage();
