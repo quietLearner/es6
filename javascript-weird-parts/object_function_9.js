@@ -17,3 +17,26 @@ var greetSpanish = makeGreeting("es");
 
 greetEnglish("john", "doe");
 greetSpanish("john", "doe");
+
+//closure and callback
+
+function sayHilater() {
+  var greeting = "hi";
+
+  setTimeout(function () {
+    console.log(greeting); // this function is callback function
+  }, 3000);
+}
+
+sayHilater();
+
+function tellMeWhenDone(callback) {
+  var a = 1000;
+  var b = 2000;
+
+  callback();
+}
+
+tellMeWhenDone(function () {
+  console.log("i am done");
+});

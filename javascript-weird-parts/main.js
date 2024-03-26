@@ -1,19 +1,40 @@
-// function factory, closure
+//call, apply, bind, change this in function execution context
+// function borrowing
+var person = {
+  firstname: "john",
+  lastname: "doe",
+  getFullName: function () {
+    var fullname = this.firstname + " " + this.lastname;
+    return fullname;
+  },
+};
 
-function makeGreeting(language) {
-  //because closure, language is still there, even when makeGreeting() is gone
+var person2 = {
+  firstname: "jane",
+  lastname: "doe",
+};
 
-  return function (firstname, lastname) {
-    if (language === "en") {
-      return console.log("hello " + firstname + " " + lastname);
-    } else if (language === "es") {
-      return console.log("halo " + firstname + " " + lastname);
-    }
-  };
+console.log(person.getFullName.apply(person2));
+
+//function currying, create a copy of functioin with preset parameters
+function multiply(a, b) {
+  return a * b;
 }
 
-var greetEnglish = makeGreeting("en");
-var greetSpanish = makeGreeting("es");
+//these two are the same
+var multiplyByTwo = multiply.bind(this, 2);
+console.log(multiplyByTwo(3)); // 6
 
-greetEnglish("john", "doe");
-greetSpanish("john", "doe");
+function _multiplyByTwo(b) {
+  var a = 2;
+  return a * b;
+}
+
+var multiply4 = multiply.bind(this, 2, 2);
+
+function _multiply4() {
+  var a = 2;
+  var b = 2;
+  return a * b;
+}
+console.log(multiply4(3)); // 4
