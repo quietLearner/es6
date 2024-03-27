@@ -20,13 +20,14 @@ var logName = function (lang1, lang2) {
 /**
  * bind person to "this" inside the logName function to replace window
  */
-var logPeronsName = logName.bind(person); // this si a function
+var logPeronsName = logName.bind(person); // this is a function
 logPeronsName();
 logPeronsName("en");
 
 logName.call(person, "en", "es");
 logName.apply(person, ["en", "es"]);
 
+// do it on the fly
 (function (lang1, lang2) {
   //console.log(arguments.callee);
   console.log("logged: " + this.getFullName()); // this = global object
@@ -56,8 +57,8 @@ function multiply(a, b) {
   return a * b;
 }
 
-//these two are the same
-var multiplyByTwo = multiply.bind(this, 2);
+//these two are the same, why pass this? we acutally does NOT care this, we can pass anything in, we only care about parameters
+var multiplyByTwo = multiply.bind(this, 2); // it create a copy of the mutiply function with a set to 2
 console.log(multiplyByTwo(3)); // 6
 
 function _multiplyByTwo(b) {
