@@ -183,7 +183,6 @@ g$()
      every method defined on Greetr.prototype
   
      so Greetr.init, can access them
-     https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes
     */
   Greetr.init.prototype = Greetr.prototype;
 
