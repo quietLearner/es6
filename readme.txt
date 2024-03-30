@@ -1,3 +1,5 @@
+ts-src/
+
 es2015 -> transpiler -> es5
 
 use typescript as transpiler

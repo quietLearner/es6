@@ -74,3 +74,17 @@ function _multiply4() {
   return a * b;
 }
 console.log(multiply4(3)); // 4
+
+
+// this is currying es6
+function add(a) {
+  return function (b) {
+    return a + b;
+  };
+}
+
+//N => 1
+console.log(add(1)(5));
+
+const sub = (a) => (b) => a - b;
+console.log(sub(5)(2));
